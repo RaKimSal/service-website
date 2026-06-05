@@ -1,23 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import BookNow from "./components/BookNow";
+import Confirmation from "./components/Confirmation";
+import Summary from "./components/Summary";
+
+import "./App.css";
 
 function App() {
+  const [isBookingOpen, setIsBookingOpen] =
+    useState(false);
+
+  const [isConfirmationOpen, setIsConfirmationOpen] =
+    useState(false);
+
+  const [confirmedBooking, setConfirmedBooking] =
+    useState(null);
+
+  const openBooking = () => {
+    setIsConfirmationOpen(false);
+    setIsBookingOpen(true);
+  };
+
+  const closeBooking = () => {
+    setIsBookingOpen(false);
+  };
+
+  const handleConfirmBooking = (bookingDetails) => {
+    setConfirmedBooking(bookingDetails);
+    setIsBookingOpen(false);
+    setIsConfirmationOpen(true);
+  };
+
+  const closeConfirmation = () => {
+    setIsConfirmationOpen(false);
+  };
+
+  const handleBackHome = () => {
+    setIsConfirmationOpen(false);
+
+    setTimeout(() => {
+      document.getElementById("home")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar onBookNowClick={openBooking} />
+
+      <Banner onBookNowClick={openBooking} />
+
+      <BookNow
+        isOpen={isBookingOpen}
+        onClose={closeBooking}
+        onConfirm={handleConfirmBooking}
+      />
+
+      <Confirmation
+        isOpen={isConfirmationOpen}
+        booking={confirmedBooking}
+        onClose={closeConfirmation}
+        onBackHome={handleBackHome}
+      />
+      <Summary />
     </div>
   );
 }
