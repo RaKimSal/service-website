@@ -7,10 +7,21 @@ import {
 import { Calendar3 } from "react-bootstrap-icons";
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({ onBookNowClick }) => {
+const Navbar = ({
+  onBookNowClick,
+  onContactUsClick,
+}) => {
   const handleBookNowClick = () => {
     if (typeof onBookNowClick === "function") {
       onBookNowClick();
+    }
+  };
+
+  const handleContactUsClick = (event) => {
+    event.preventDefault();
+
+    if (typeof onContactUsClick === "function") {
+      onContactUsClick();
     }
   };
 
@@ -44,12 +55,15 @@ const Navbar = ({ onBookNowClick }) => {
                 Our Services
               </Nav.Link>
 
-              <Nav.Link href="#booking">
+              <Nav.Link as={NavLink} to="/booking">
                 Booking
               </Nav.Link>
 
-              <Nav.Link href="#contact">
-                Contact
+              <Nav.Link
+                href="#contact"
+                onClick={handleContactUsClick}
+              >
+                Contact Us
               </Nav.Link>
 
               <button

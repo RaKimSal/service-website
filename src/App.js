@@ -10,7 +10,10 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
 import OurService from "./components/OurService";
+import Booking from "./components/Booking";
 import BookNow from "./components/BookNow";
+import ContactUs from "./components/ContactUs";
+import ContactConfirmation from "./components/ContactConfirmation";
 import Confirmation from "./components/Confirmation";
 
 import "./App.css";
@@ -21,13 +24,26 @@ function AppContent() {
   const [isBookingOpen, setIsBookingOpen] =
     useState(false);
 
+  const [isContactOpen, setIsContactOpen] =
+    useState(false);
+
+  const [
+    isContactConfirmationOpen,
+    setIsContactConfirmationOpen,
+  ] = useState(false);
+
   const [isConfirmationOpen, setIsConfirmationOpen] =
     useState(false);
 
   const [confirmedBooking, setConfirmedBooking] =
     useState(null);
 
+  const [confirmedContact, setConfirmedContact] =
+    useState(null);
+
   const openBooking = () => {
+    setIsContactOpen(false);
+    setIsContactConfirmationOpen(false);
     setIsConfirmationOpen(false);
     setIsBookingOpen(true);
   };
@@ -36,10 +52,31 @@ function AppContent() {
     setIsBookingOpen(false);
   };
 
+  const openContact = () => {
+    setIsBookingOpen(false);
+    setIsConfirmationOpen(false);
+    setIsContactConfirmationOpen(false);
+    setIsContactOpen(true);
+  };
+
+  const closeContact = () => {
+    setIsContactOpen(false);
+  };
+
   const handleConfirmBooking = (bookingDetails) => {
     setConfirmedBooking(bookingDetails);
     setIsBookingOpen(false);
     setIsConfirmationOpen(true);
+  };
+
+  const handleSendMessage = (contactDetails) => {
+    setConfirmedContact(contactDetails);
+    setIsContactOpen(false);
+    setIsContactConfirmationOpen(true);
+  };
+
+  const closeContactConfirmation = () => {
+    setIsContactConfirmationOpen(false);
   };
 
   const closeConfirmation = () => {
@@ -51,23 +88,45 @@ function AppContent() {
     navigate("/");
 
     setTimeout(() => {
-      document.getElementById("home")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      document
+        .getElementById("home")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }, 100);
+  };
+
+  const handleContactBackHome = () => {
+    setIsContactConfirmationOpen(false);
+    navigate("/");
+
+    setTimeout(() => {
+      document
+        .getElementById("home")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
     }, 100);
   };
 
   return (
     <div className="App">
-      <Navbar onBookNowClick={openBooking} />
+      <Navbar
+        onBookNowClick={openBooking}
+        onContactUsClick={openContact}
+      />
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Banner onBookNowClick={openBooking} />
+              <Banner
+                onBookNowClick={openBooking}
+              />
+
               <Summary />
             </>
           }
@@ -81,12 +140,34 @@ function AppContent() {
             />
           }
         />
+
+        <Route
+          path="/booking"
+          element={
+            <Booking
+              onConfirm={handleConfirmBooking}
+            />
+          }
+        />
       </Routes>
 
       <BookNow
         isOpen={isBookingOpen}
         onClose={closeBooking}
         onConfirm={handleConfirmBooking}
+      />
+
+      <ContactUs
+        isOpen={isContactOpen}
+        onClose={closeContact}
+        onSend={handleSendMessage}
+      />
+
+      <ContactConfirmation
+        isOpen={isContactConfirmationOpen}
+        contact={confirmedContact}
+        onClose={closeContactConfirmation}
+        onBackHome={handleContactBackHome}
       />
 
       <Confirmation

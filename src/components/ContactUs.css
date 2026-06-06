@@ -1,0 +1,560 @@
+/*************************************************
+  CONTACT US POPUP
+*************************************************/
+
+.contactus-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    height: 100vh;
+    padding: 26px 40px;
+  
+    background: rgba(239, 229, 218, 0.72);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .contactus-modal {
+    position: relative;
+  
+    width: 100%;
+    max-width: 936px;
+    min-height: 454px;
+    padding: 34px 49px 30px;
+  
+    background: rgba(255, 255, 255, 0.97);
+    border: none;
+    border-radius: 17px;
+  
+    box-shadow:
+      0 4px 3px rgba(80, 52, 43, 0.25),
+      0 13px 25px rgba(80, 52, 43, 0.12);
+  
+    box-sizing: border-box;
+  }
+  
+  /*************************************************
+    CLOSE BUTTON
+  *************************************************/
+  
+  .contactus-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 10;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  
+    color: #67352c;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+  
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+  
+    cursor: pointer;
+  }
+  
+  .contactus-close:hover {
+    background: rgba(103, 53, 44, 0.08);
+  }
+  
+  /*************************************************
+    MAIN LAYOUT
+  *************************************************/
+  
+  .contactus-layout {
+    display: grid;
+    grid-template-columns: 480px 1px 1fr;
+    column-gap: 68px;
+  
+    width: 100%;
+    min-height: 388px;
+  
+    align-items: stretch;
+  }
+  
+  /*************************************************
+    LEFT FORM PANEL
+  *************************************************/
+  
+  .contactus-form-panel {
+    width: 480px;
+    min-height: 388px;
+    padding: 21px 27px 13px;
+  
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #79463b;
+    border-radius: 17px;
+  
+    box-sizing: border-box;
+  }
+  
+  .contactus-form-panel h2 {
+    margin: 0 0 26px 10px;
+  
+    color: #66372f;
+    font-family: "Brawler", Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 2.5px;
+  }
+  
+  /*************************************************
+    FORM
+  *************************************************/
+  
+  .contactus-form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  
+    width: 100%;
+  }
+  
+  .contactus-row {
+    display: grid;
+    grid-template-columns: 193px 193px;
+    column-gap: 32px;
+  
+    width: 100%;
+  }
+  
+  .contactus-input-group,
+  .contactus-message-group {
+    position: relative;
+    width: 100%;
+  }
+  
+  .contactus-input-group {
+    height: 34px;
+  }
+  
+  /*************************************************
+    INPUTS AND SELECT
+  *************************************************/
+  
+  .contactus-input-group input,
+  .contactus-input-group select {
+    display: block;
+  
+    width: 100% !important;
+    height: 34px !important;
+    min-height: 34px !important;
+  
+    margin: 0 !important;
+    padding: 6px 10px 6px 38px !important;
+  
+    color: #55322a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1px;
+  
+    background: #ffffff !important;
+    border: 1px solid #804b40 !important;
+    border-radius: 3px !important;
+    outline: none !important;
+    box-shadow: none !important;
+  
+    box-sizing: border-box !important;
+  }
+  
+  .contactus-input-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  
+  .contactus-input-group input::placeholder,
+  .contactus-message-group textarea::placeholder {
+    color: #aaa09d;
+    opacity: 1;
+  }
+  
+  /*************************************************
+    FIELD ICONS
+  *************************************************/
+  
+  .contactus-field-icon {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    z-index: 2;
+  
+    width: 19px;
+    height: 19px;
+  
+    object-fit: contain;
+  
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /*************************************************
+    MESSAGE AREA
+  *************************************************/
+  
+  .contactus-message-group {
+    height: 146px;
+  }
+  
+  .contactus-message-group textarea {
+    display: block;
+  
+    width: 100% !important;
+    height: 146px !important;
+    min-height: 146px !important;
+    max-height: 146px !important;
+  
+    margin: 0 !important;
+    padding: 12px 12px 12px 38px !important;
+  
+    color: #55322a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1px;
+  
+    background: #ffffff !important;
+    border: 1px solid #804b40 !important;
+    border-radius: 3px !important;
+    outline: none !important;
+    box-shadow: none !important;
+  
+    resize: none;
+  
+    box-sizing: border-box !important;
+  }
+  
+  .contactus-message-icon {
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    z-index: 2;
+  
+    width: 20px;
+    height: 20px;
+  
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  /*************************************************
+    FOCUS
+  *************************************************/
+  
+  .contactus-input-group input:focus,
+  .contactus-input-group select:focus,
+  .contactus-message-group textarea:focus {
+    border-color: #65352c !important;
+    box-shadow: 0 0 0 2px rgba(101, 53, 44, 0.08) !important;
+  }
+  
+  /*************************************************
+    SEND BUTTON
+  *************************************************/
+  
+  .contactus-submit {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+  
+    gap: 8px;
+  
+    width: auto !important;
+    min-width: 145px;
+    height: 38px;
+    min-height: 38px;
+  
+    margin: 3px 0 0 !important;
+    padding: 6px 12px !important;
+  
+    color: #ffffff !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1px;
+  
+    background: #65342b !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+  
+    cursor: pointer;
+  }
+  
+  .contactus-submit img {
+    width: 15px;
+    height: 15px;
+  
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+  
+  .contactus-submit:hover {
+    background: #784439 !important;
+    transform: none !important;
+  }
+  
+  /*************************************************
+    PRIVACY ROW
+  *************************************************/
+  
+  .contactus-privacy {
+    display: flex;
+    align-items: center;
+  
+    gap: 5px;
+    height: 28px;
+  
+    margin-top: -1px;
+  }
+  
+  .contactus-privacy img {
+    flex-shrink: 0;
+  
+    width: 25px;
+    height: 25px;
+  
+    object-fit: contain;
+  }
+  
+  .contactus-privacy p {
+    margin: 0 !important;
+  
+    color: #35231f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+  
+  /*************************************************
+    VERTICAL DIVIDER
+  *************************************************/
+  
+  .contactus-divider {
+    align-self: center;
+  
+    width: 1px;
+    height: 325px;
+    min-height: 325px;
+  
+    margin: 0;
+  
+    background: #655b57;
+  }
+  
+  /*************************************************
+    RIGHT CONTACT INFORMATION
+  *************************************************/
+  
+  .contactus-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  
+    padding: 41px 0 0;
+  }
+  
+  .contactus-information-heading {
+    display: flex;
+    align-items: center;
+  
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .contactus-information-heading h2 {
+    margin: 0;
+  
+    color: #66372f;
+    font-family: "Brawler", Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 2.5px;
+  }
+  
+  .contactus-information-heading span {
+    color: #cb916a;
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  /*************************************************
+    INFORMATION LIST
+  *************************************************/
+  
+  .contactus-information-list {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 18px;
+  }
+  
+  .contactus-information-item {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    align-items: center;
+  
+    column-gap: 10px;
+  }
+  
+  /*************************************************
+    ROUND ICON BACKGROUNDS
+  *************************************************/
+  
+  .contactus-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 35px;
+    height: 35px;
+  
+    background: #ebddd2;
+    border-radius: 50%;
+  }
+  
+  .contactus-icon-circle img {
+    width: 23px;
+    height: 23px;
+  
+    object-fit: contain;
+  }
+  
+  /*************************************************
+    CONTACT TEXT
+  *************************************************/
+  
+  .contactus-information-item h3 {
+    margin: 0 0 2px;
+  
+    color: #2f201c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+  }
+  
+  .contactus-information-item p {
+    max-width: 220px;
+    margin: 0;
+  
+    color: #2f201c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.4px;
+  }
+  
+  /*************************************************
+    RESPONSIVE TABLET
+  *************************************************/
+  
+  @media (max-width: 900px) {
+    .contactus-overlay {
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    .contactus-modal {
+      max-width: 650px;
+      min-height: auto;
+      padding: 45px 30px 30px;
+    }
+  
+    .contactus-layout {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+  
+      min-height: auto;
+    }
+  
+    .contactus-form-panel {
+      width: 100%;
+    }
+  
+    .contactus-row {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+    }
+  
+    .contactus-divider {
+      width: 100%;
+      height: 1px;
+      min-height: 1px;
+    }
+  
+    .contactus-information {
+      padding: 0 15px 15px;
+    }
+  }
+  
+  /*************************************************
+    RESPONSIVE MOBILE
+  *************************************************/
+  
+  @media (max-width: 560px) {
+    .contactus-overlay {
+      padding: 12px;
+    }
+  
+    .contactus-modal {
+      padding: 45px 15px 22px;
+      border-radius: 15px;
+    }
+  
+    .contactus-form-panel {
+      min-height: auto;
+      padding: 22px 16px 16px;
+    }
+  
+    .contactus-row {
+      grid-template-columns: 1fr;
+      row-gap: 13px;
+    }
+  
+    .contactus-input-group {
+      height: 38px;
+    }
+  
+    .contactus-input-group input,
+    .contactus-input-group select {
+      height: 38px !important;
+      min-height: 38px !important;
+    }
+  
+    .contactus-information-heading h2,
+    .contactus-form-panel h2 {
+      font-size: 16px;
+    }
+  }
