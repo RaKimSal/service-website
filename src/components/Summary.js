@@ -1,73 +1,78 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import face1 from '../assets/img/face1.png';
-import face2 from '../assets/img/face2.png';
-import face3 from '../assets/img/face3.png';
-import face4 from '../assets/img/face4.png';
+import face1 from "../assets/img/face1.png";
+import face2 from "../assets/img/face2.png";
+import face3 from "../assets/img/face3.png";
+import face4 from "../assets/img/face4.png";
 
-import houseIcon from '../assets/icons/housecleaning.png';
-import officeIcon from '../assets/icons/officecleaning.svg';
-import partyIcon from '../assets/icons/partyassisting.png';
-import partialIcon from '../assets/icons/partialdeepcleaning.svg';
+import houseIcon from "../assets/icons/housecleaning.png";
+import officeIcon from "../assets/icons/officecleaning.svg";
+import partyIcon from "../assets/icons/partyassisting.png";
+import partialIcon from "../assets/icons/partialdeepcleaning.svg";
 
-import arrowIcon from '../assets/icons/arrowright.svg';
-import sparkleIcon from '../assets/icons/sparkleaccent.png';
+import arrowIcon from "../assets/icons/arrowright.svg";
+import sparkleIcon from "../assets/icons/sparkleaccent.png";
 
-import biweeklyIcon from '../assets/icons/biweekly.png';
-import monthlyIcon from '../assets/icons/calendarevent.svg';
-import phoneIcon from '../assets/icons/phoneoncall.svg';
+import biweeklyIcon from "../assets/icons/biweekly.png";
+import monthlyIcon from "../assets/icons/calendarevent.svg";
+import phoneIcon from "../assets/icons/phoneoncall.svg";
 
-import quoteIcon from '../assets/icons/quote.svg';
-import heartIcon from '../assets/icons/heartsatisfaction.svg';
-import satisfactionIcon from '../assets/icons/satisfaction.png';
-import ecoIcon from '../assets/icons/leafecofriendly.svg';
-import backgroundIcon from '../assets/icons/backgroundchecked.svg';
-import starIcon from '../assets/icons/starrating.svg';
+import quoteIcon from "../assets/icons/quote.svg";
+import heartIcon from "../assets/icons/heartsatisfaction.svg";
+import satisfactionIcon from "../assets/icons/satisfaction.png";
+import ecoIcon from "../assets/icons/leafecofriendly.svg";
+import backgroundIcon from "../assets/icons/backgroundchecked.svg";
+import starIcon from "../assets/icons/starrating.svg";
 
 const services = [
   {
-    title: 'House Cleaning',
+    title: "House Cleaning",
     description:
-      'Complete home cleaning to keep your space fresh, healthy, and comfortable.',
+      "Complete home cleaning to keep your space fresh, healthy, and comfortable.",
     icon: houseIcon,
+    sectionId: "house-cleaning",
   },
   {
-    title: 'Office Cleaning',
+    title: "Office Cleaning",
     description:
-      'Complete office cleaning to keep your space fresh, healthy, and comfortable.',
+      "Complete office cleaning to keep your space fresh, healthy, and comfortable.",
     icon: officeIcon,
+    sectionId: "office-cleaning",
   },
   {
-    title: 'Party Cleaning',
+    title: "Party Cleaning",
     description:
-      'Complete party cleaning to keep your space fresh, healthy, and comfortable.',
+      "Complete party cleaning to keep your space fresh, healthy, and comfortable.",
     icon: partyIcon,
+    sectionId: "party-cleaning",
   },
   {
-    title: 'Partial Deep Cleaning',
+    title: "Partial Deep Cleaning",
     description:
-      'Complete deep cleaning to keep your space fresh, healthy, and comfortable.',
+      "Complete deep cleaning to keep your space fresh, healthy, and comfortable.",
     icon: partialIcon,
+    sectionId: "partial-deep-cleaning",
   },
 ];
 
 const schedules = [
   {
-    title: 'Bi-weekly',
-    subtitle: 'Every 2 weeks',
-    description: 'Keep your place consistently clean',
+    title: "Bi-weekly",
+    subtitle: "Every 2 weeks",
+    description: "Keep your place consistently clean",
     icon: biweeklyIcon,
   },
   {
-    title: 'Monthly',
-    subtitle: 'Once a month',
-    description: 'Perfect for routine maintenance',
+    title: "Monthly",
+    subtitle: "Once a month",
+    description: "Perfect for routine maintenance",
     icon: monthlyIcon,
   },
   {
-    title: 'On Call',
-    subtitle: 'When you need us',
-    description: 'Flexible booking at your convenience',
+    title: "On Call",
+    subtitle: "When you need us",
+    description: "Flexible booking at your convenience",
     icon: phoneIcon,
   },
 ];
@@ -84,15 +89,18 @@ const Summary = () => {
                 <img src={sparkleIcon} alt="" />
               </h2>
 
-              <a href="#all-services" className="view-all-link">
+              <Link to="/services" className="view-all-link">
                 View All Services
                 <img src={arrowIcon} alt="" />
-              </a>
+              </Link>
             </div>
 
             <div className="service-grid">
               {services.map((service) => (
-                <article className="service-card" key={service.title}>
+                <article
+                  className="service-card"
+                  key={service.title}
+                >
                   <div className="service-card-content">
                     <div className="service-card-top">
                       <div className="service-icon-circle">
@@ -104,10 +112,13 @@ const Summary = () => {
 
                     <p>{service.description}</p>
 
-                    <a href="#booking" className="learn-more-link">
+                    <Link
+                      to={`/services#${service.sectionId}`}
+                      className="learn-more-link"
+                    >
                       Learn More
                       <img src={arrowIcon} alt="" />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -121,7 +132,10 @@ const Summary = () => {
 
             <div className="schedule-card">
               {schedules.map((schedule, index) => (
-                <div className="schedule-option" key={schedule.title}>
+                <div
+                  className="schedule-option"
+                  key={schedule.title}
+                >
                   <div className="schedule-icon-circle">
                     <img src={schedule.icon} alt="" />
                   </div>
@@ -141,21 +155,35 @@ const Summary = () => {
 
         <div className="summary-bottom">
           <div className="testimonial-summary">
-            <img className="quote-icon" src={quoteIcon} alt="" />
+            <img
+              className="quote-icon"
+              src={quoteIcon}
+              alt=""
+            />
 
             <div className="testimonial-copy">
               <p>
-                Calm Home Cleaning is truly a life saver! They are punctual,
-                detailed oriented, and leave my home spotless every time.
+                Calm Home Cleaning is truly a life saver! They
+                are punctual, detailed oriented, and leave my
+                home spotless every time.
               </p>
 
               <div className="testimonial-footer">
-                <span className="testimonial-author-name">- Deeba F.</span>
+                <span className="testimonial-author-name">
+                  - Deeba F.
+                </span>
 
-                <span className="testimonial-stars" aria-label="5 out of 5 stars">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                        <img key={star} src={starIcon} alt="" />
-                    ))}
+                <span
+                  className="testimonial-stars"
+                  aria-label="5 out of 5 stars"
+                >
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <img
+                      key={star}
+                      src={starIcon}
+                      alt=""
+                    />
+                  ))}
                 </span>
               </div>
             </div>
@@ -176,7 +204,11 @@ const Summary = () => {
               <span>happy clients</span>
             </div>
 
-            <img className="small-heart" src={heartIcon} alt="" />
+            <img
+              className="small-heart"
+              src={heartIcon}
+              alt=""
+            />
           </div>
 
           <div className="summary-divider" />
@@ -188,7 +220,9 @@ const Summary = () => {
 
             <div>
               <strong>100% Satisfaction</strong>
-              <span>We are not happy unless you are.</span>
+              <span>
+                We are not happy unless you are.
+              </span>
             </div>
           </div>
 
@@ -201,7 +235,9 @@ const Summary = () => {
 
             <div>
               <strong>Eco-Friendly</strong>
-              <span>Safe products for your home and family.</span>
+              <span>
+                Safe products for your home and family.
+              </span>
             </div>
           </div>
 
@@ -214,7 +250,9 @@ const Summary = () => {
 
             <div>
               <strong>Background Checked</strong>
-              <span>Reliable cleaners you can trust.</span>
+              <span>
+                Reliable cleaners you can trust.
+              </span>
             </div>
           </div>
         </div>

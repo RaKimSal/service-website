@@ -5,6 +5,7 @@ import {
   Navbar as BootstrapNavbar,
 } from "react-bootstrap";
 import { Calendar3 } from "react-bootstrap-icons";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ onBookNowClick }) => {
   const handleBookNowClick = () => {
@@ -16,9 +17,13 @@ const Navbar = ({ onBookNowClick }) => {
   return (
     <header className="navbar-wrapper">
       <Container fluid>
-        <BootstrapNavbar expand="lg" className="custom-navbar">
+        <BootstrapNavbar
+          expand="lg"
+          className="custom-navbar"
+        >
           <BootstrapNavbar.Brand
-            href="#home"
+            as={NavLink}
+            to="/"
             className="navbar-brand-text"
           >
             IVY’S Cleaning Service
@@ -31,9 +36,11 @@ const Navbar = ({ onBookNowClick }) => {
 
           <BootstrapNavbar.Collapse id="main-navbar">
             <Nav className="ms-auto navbar-links">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/">
+                Home
+              </Nav.Link>
 
-              <Nav.Link href="#services">
+              <Nav.Link as={NavLink} to="/services">
                 Our Services
               </Nav.Link>
 

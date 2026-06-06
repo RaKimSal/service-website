@@ -1,0 +1,408 @@
+/************ OUR SERVICES PAGE ************/
+.App .services-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px 1.8% 60px;
+    background-color: #e0d0c2 !important;
+    color: #6b3f2a;
+    font-family: "Brawler", serif;
+  }
+  
+  .services-page,
+  .services-page * {
+    box-sizing: border-box;
+  }
+  
+  .services-page .services-body {
+    display: flex;
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  
+  /************ SHARED SERVICE CARD ************/
+  .services-page .cleaning-service-card {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+    background-color: #faf4ee;
+    border: 1px solid rgba(107, 63, 42, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(86, 46, 39, 0.3);
+    scroll-margin-top: 120px;
+  }
+  
+  .services-page .cleaning-service-card.text-left {
+    grid-template-columns: 56% 44%;
+  }
+  
+  .services-page .cleaning-service-card.text-right {
+    grid-template-columns: 44% 56%;
+  }
+  
+  
+  /************ SERVICE TEXT PANEL ************/
+  .services-page .cleaning-service-information {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-width: 0;
+    align-items: flex-start;
+    gap: 22px;
+    background-color: #faf4ee;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-left
+    .cleaning-service-information {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 30px 115px 28px 34px;
+  
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      78% 100%,
+      0 100%
+    );
+  }
+  
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-information {
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: row-reverse;
+    padding: 30px 34px 28px 165px;
+  
+    clip-path: polygon(
+      22% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+  }
+  
+  
+  /************ SERVICE ICON ************/
+  .services-page .cleaning-service-icon {
+    display: flex;
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+    min-height: 88px;
+    max-width: 88px;
+    max-height: 88px;
+    flex: 0 0 88px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #e0d0c2;
+    border-radius: 50%;
+  }
+  
+  .services-page .cleaning-service-icon img {
+    position: static;
+    display: block;
+    width: 53px;
+    height: 53px;
+    min-width: 53px;
+    min-height: 53px;
+    max-width: 53px;
+    max-height: 53px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    transform: none;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-icon {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+  
+  /************ SERVICE TEXT CONTENT ************/
+  .services-page .cleaning-service-copy {
+    display: flex;
+    min-width: 0;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .services-page .cleaning-service-title-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 18px;
+    margin: 0 0 30px;
+  }
+  
+  .services-page .cleaning-service-title-row h2 {
+    margin: 0;
+    color: #6b3f2a;
+    font-family: "Brawler", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 20px;
+  }
+  
+  .services-page .cleaning-service-title-row span {
+    color: #9c4b00;
+    font-family: "Brawler", serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 20px;
+  }
+  
+  
+  /************ LEFT-SIDE SERVICE TITLE ************/
+  .services-page
+    .cleaning-service-card.text-left
+    .cleaning-service-title-row h2 {
+    order: 1;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-left
+    .cleaning-service-title-row span {
+    order: 2;
+    margin-left: auto;
+  }
+  
+  
+  /************ RIGHT-SIDE SERVICE TITLE ************/
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-title-row {
+    justify-content: flex-start;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-title-row span {
+    order: 1;
+    margin-left: 0;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-title-row h2 {
+    order: 2;
+  }
+  
+  
+  /************ SERVICE DESCRIPTION ************/
+.services-page .cleaning-service-copy > p {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 0 8px;
+    padding: 0;
+    color: #6b3f2a;
+    font-family: "Brawler", serif;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-align: justify;
+  }
+  
+  
+  /************ SERVICE BUTTON ************/
+  .services-page .cleaning-service-copy > button {
+    display: flex;
+    width: 220px;
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  
+    margin-top: 20px;
+  
+    padding: 8px 20px;
+    color: #ffffff;
+    background-color: #6b3f2a;
+    border: 1px solid #6b3f2a;
+    border-radius: 18px;
+    font-family: "Brawler", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(86, 46, 39, 0.25);
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .services-page .cleaning-service-copy > button:hover {
+    background-color: #562e27;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(86, 46, 39, 0.35);
+  }
+  
+  
+  /************ SERVICE IMAGE ************/
+  .services-page .cleaning-service-photo {
+    position: relative;
+    min-height: 260px;
+    overflow: hidden;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-left
+    .cleaning-service-photo {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: -135px;
+  }
+  
+  .services-page
+    .cleaning-service-card.text-right
+    .cleaning-service-photo {
+    grid-column: 1;
+    grid-row: 1;
+    margin-right: -135px;
+  }
+  
+  .services-page .cleaning-service-photo img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+    transform: none;
+  }
+  
+  
+  /************ OUR SERVICE SCHEDULE CARD ************/
+  .services-page .our-service-schedule-card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    min-height: 105px;
+    margin: 4px 0 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #faf4ee;
+    border: 1px solid rgba(107, 63, 42, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 5px 9px rgba(86, 46, 39, 0.26);
+  }
+  
+  
+  /************ EACH SCHEDULE OPTION ************/
+  .services-page .our-service-schedule-option {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 105px;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin: 0;
+    padding: 18px 30px;
+  }
+  
+  
+  /************ SCHEDULE ICON CIRCLE ************/
+  .services-page .our-service-schedule-icon {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    min-height: 58px;
+    max-width: 58px;
+    max-height: 58px;
+    flex: 0 0 58px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e0d0c2;
+    border-radius: 50%;
+  }
+  
+  .services-page .our-service-schedule-icon > img {
+    position: static !important;
+    display: block !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    flex: 0 0 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+  }
+  
+  
+  /************ SCHEDULE TEXT ************/
+  .services-page .our-service-schedule-details {
+    display: flex;
+    min-width: 130px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .services-page .our-service-schedule-details > h3 {
+    margin: 0 0 6px;
+    padding: 0;
+    color: #6b3f2a;
+    font-family: "Brawler", serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  
+  .services-page .our-service-schedule-details > p {
+    margin: 0;
+    padding: 0;
+    color: #6b3f2a;
+    font-family: "Brawler", serif;
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+  
+  
+  /************ SCHEDULE VERTICAL DIVIDERS ************/
+  .services-page .our-service-schedule-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(107, 63, 42, 0.28);
+  }
+  
+  
+  /************ PAGE BACKGROUND ************/
+  body,
+  #root,
+  .App,
+  .navbar-wrapper {
+    background-color: #e0d0c2;
+  }

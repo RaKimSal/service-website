@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
+import Summary from "./components/Summary";
+import OurService from "./components/OurService";
 import BookNow from "./components/BookNow";
 import Confirmation from "./components/Confirmation";
-import Summary from "./components/Summary";
 
 import "./App.css";
 
-function App() {
+function AppContent() {
+  const navigate = useNavigate();
+
   const [isBookingOpen, setIsBookingOpen] =
     useState(false);
 
@@ -39,6 +48,7 @@ function App() {
 
   const handleBackHome = () => {
     setIsConfirmationOpen(false);
+    navigate("/");
 
     setTimeout(() => {
       document.getElementById("home")?.scrollIntoView({
@@ -52,7 +62,26 @@ function App() {
     <div className="App">
       <Navbar onBookNowClick={openBooking} />
 
-      <Banner onBookNowClick={openBooking} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Banner onBookNowClick={openBooking} />
+              <Summary />
+            </>
+          }
+        />
+
+        <Route
+          path="/services"
+          element={
+            <OurService
+              onBookNowClick={openBooking}
+            />
+          }
+        />
+      </Routes>
 
       <BookNow
         isOpen={isBookingOpen}
@@ -66,8 +95,15 @@ function App() {
         onClose={closeConfirmation}
         onBackHome={handleBackHome}
       />
-      <Summary />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

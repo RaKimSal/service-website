@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import bannerImage from "../assets/img/banner.png";
 
@@ -46,13 +47,13 @@ const Banner = ({ onBookNowClick }) => {
             <span>Book Now</span>
           </button>
 
-          <a
-            href="#services"
+          <Link
+            to="/services"
             className="banner-button banner-button-secondary"
           >
             <span>View Services</span>
             <img src={arrowRightIcon} alt="" />
-          </a>
+          </Link>
         </div>
 
         <div className="banner-features">
