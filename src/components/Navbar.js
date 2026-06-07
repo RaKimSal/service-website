@@ -9,7 +9,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = ({
   onBookNowClick,
+<<<<<<< HEAD
   onContactUsClick,
+=======
+  onHomeClick,
+  onServicesClick,
+>>>>>>> 8e829a9 (Updating the footer)
 }) => {
   const handleBookNowClick = () => {
     if (typeof onBookNowClick === "function") {
@@ -17,11 +22,27 @@ const Navbar = ({
     }
   };
 
+<<<<<<< HEAD
   const handleContactUsClick = (event) => {
     event.preventDefault();
 
     if (typeof onContactUsClick === "function") {
       onContactUsClick();
+=======
+  const handleHomeClick = (event) => {
+    event.preventDefault();
+
+    if (typeof onHomeClick === "function") {
+      onHomeClick();
+    }
+  };
+
+  const handleServicesClick = (event) => {
+    event.preventDefault();
+
+    if (typeof onServicesClick === "function") {
+      onServicesClick();
+>>>>>>> 8e829a9 (Updating the footer)
     }
   };
 
@@ -36,6 +57,7 @@ const Navbar = ({
             as={NavLink}
             to="/"
             className="navbar-brand-text"
+            onClick={handleHomeClick}
           >
             IVY’S Cleaning Service
           </BootstrapNavbar.Brand>
@@ -47,11 +69,25 @@ const Navbar = ({
 
           <BootstrapNavbar.Collapse id="main-navbar">
             <Nav className="ms-auto navbar-links">
+<<<<<<< HEAD
               <Nav.Link as={NavLink} to="/">
                 Home
               </Nav.Link>
 
               <Nav.Link as={NavLink} to="/services">
+=======
+              <Nav.Link
+                href="#home"
+                onClick={handleHomeClick}
+              >
+                Home
+              </Nav.Link>
+
+              <Nav.Link
+                href="#services"
+                onClick={handleServicesClick}
+              >
+>>>>>>> 8e829a9 (Updating the footer)
                 Our Services
               </Nav.Link>
 

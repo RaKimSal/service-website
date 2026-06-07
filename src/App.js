@@ -9,6 +9,7 @@ import {
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
+<<<<<<< HEAD
 import OurService from "./components/OurService";
 import Booking from "./components/Booking";
 import BookNow from "./components/BookNow";
@@ -20,6 +21,15 @@ import "./App.css";
 
 function AppContent() {
   const navigate = useNavigate();
+=======
+import OurServices from "./components/OurServices";
+
+import "./App.css";
+
+function App() {
+  const [currentPage, setCurrentPage] =
+    useState("home");
+>>>>>>> 8e829a9 (Updating the footer)
 
   const [isBookingOpen, setIsBookingOpen] =
     useState(false);
@@ -83,8 +93,17 @@ function AppContent() {
     setIsConfirmationOpen(false);
   };
 
+  const showHomePage = () => {
+    setCurrentPage("home");
+  };
+
+  const showServicesPage = () => {
+    setCurrentPage("services");
+  };
+
   const handleBackHome = () => {
     setIsConfirmationOpen(false);
+<<<<<<< HEAD
     navigate("/");
 
     setTimeout(() => {
@@ -109,10 +128,14 @@ function AppContent() {
           block: "start",
         });
     }, 100);
+=======
+    setCurrentPage("home");
+>>>>>>> 8e829a9 (Updating the footer)
   };
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <Navbar
         onBookNowClick={openBooking}
         onContactUsClick={openContact}
@@ -150,6 +173,27 @@ function AppContent() {
           }
         />
       </Routes>
+=======
+      {currentPage === "home" ? (
+        <>
+          <Navbar
+            onBookNowClick={openBooking}
+            onHomeClick={showHomePage}
+            onServicesClick={showServicesPage}
+          />
+
+          <Banner onBookNowClick={openBooking} />
+
+          <Summary />
+        </>
+      ) : (
+        <OurServices
+          onBookNowClick={openBooking}
+          onHomeClick={showHomePage}
+          onServicesClick={showServicesPage}
+        />
+      )}
+>>>>>>> 8e829a9 (Updating the footer)
 
       <BookNow
         isOpen={isBookingOpen}
