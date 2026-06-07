@@ -1,0 +1,141 @@
+/************ Footer ************/
+.site-footer {
+    width: 100%;
+    padding: 8px 8px;
+    background-color: #e0d0c2;
+    font-family: "Brawler", Georgia, serif !important;
+  }
+  
+  .site-footer *,
+  .site-footer p,
+  .site-footer a {
+    font-family: "Brawler", Georgia, serif !important;
+  }
+  
+  .site-footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .site-footer-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 82px;
+    height: 82px;
+    flex-shrink: 0;
+  }
+  
+  .site-footer-logo {
+    display: block !important;
+  
+    width: 82px !important;
+    height: 82px !important;
+    max-width: 82px !important;
+    max-height: 82px !important;
+  
+    object-fit: contain !important;
+  }
+  
+  .site-footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  
+  .site-footer-credit {
+    margin: 0 !important;
+  
+    color: #562e27 !important;
+    font-family: "Brawler", serif !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.3px;
+  }
+  
+  .site-footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .site-footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 42px;
+    height: 42px;
+  }
+  
+  .site-footer-social-icon {
+    display: block !important;
+  
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+  
+    margin: 0 !important;
+    padding: 0 !important;
+  
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transition: transform 0.2s ease;
+  }
+  
+  .site-footer-social-icon:hover {
+    transform: scale(1.2) translateY(-1px);
+  }
+  
+  /************ Mobile ************/
+  @media (max-width: 600px) {
+    .site-footer {
+      padding: 12px 14px;
+    }
+  
+    .site-footer-content {
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .site-footer-logo-link,
+    .site-footer-logo {
+      width: 72px !important;
+      height: 72px !important;
+      max-width: 72px !important;
+      max-height: 72px !important;
+    }
+  
+    .site-footer-right {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .site-footer-credit {
+      font-size: 15px !important;
+      text-align: center;
+    }
+  
+    .site-footer-socials a {
+      width: 38px;
+      height: 38px;
+    }
+  
+    .site-footer-social-icon {
+      width: 36px !important;
+      height: 36px !important;
+      max-width: 36px !important;
+      max-height: 36px !important;
+    }
+  }

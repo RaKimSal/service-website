@@ -6,30 +6,21 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
-<<<<<<< HEAD
 import OurService from "./components/OurService";
 import Booking from "./components/Booking";
 import BookNow from "./components/BookNow";
 import ContactUs from "./components/ContactUs";
 import ContactConfirmation from "./components/ContactConfirmation";
 import Confirmation from "./components/Confirmation";
-
-import "./App.css";
+import Footer from "./components/Footer";
 
 function AppContent() {
   const navigate = useNavigate();
-=======
-import OurServices from "./components/OurServices";
-
-import "./App.css";
-
-function App() {
-  const [currentPage, setCurrentPage] =
-    useState("home");
->>>>>>> 8e829a9 (Updating the footer)
 
   const [isBookingOpen, setIsBookingOpen] =
     useState(false);
@@ -93,17 +84,8 @@ function App() {
     setIsConfirmationOpen(false);
   };
 
-  const showHomePage = () => {
-    setCurrentPage("home");
-  };
-
-  const showServicesPage = () => {
-    setCurrentPage("services");
-  };
-
   const handleBackHome = () => {
     setIsConfirmationOpen(false);
-<<<<<<< HEAD
     navigate("/");
 
     setTimeout(() => {
@@ -128,72 +110,51 @@ function App() {
           block: "start",
         });
     }, 100);
-=======
-    setCurrentPage("home");
->>>>>>> 8e829a9 (Updating the footer)
   };
 
   return (
     <div className="App">
-<<<<<<< HEAD
       <Navbar
         onBookNowClick={openBooking}
         onContactUsClick={openContact}
       />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Banner
-                onBookNowClick={openBooking}
-              />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Banner
+                  onBookNowClick={openBooking}
+                />
 
-              <Summary />
-            </>
-          }
-        />
-
-        <Route
-          path="/services"
-          element={
-            <OurService
-              onBookNowClick={openBooking}
-            />
-          }
-        />
-
-        <Route
-          path="/booking"
-          element={
-            <Booking
-              onConfirm={handleConfirmBooking}
-            />
-          }
-        />
-      </Routes>
-=======
-      {currentPage === "home" ? (
-        <>
-          <Navbar
-            onBookNowClick={openBooking}
-            onHomeClick={showHomePage}
-            onServicesClick={showServicesPage}
+                <Summary />
+              </>
+            }
           />
 
-          <Banner onBookNowClick={openBooking} />
+          <Route
+            path="/services"
+            element={
+              <OurService
+                onBookNowClick={openBooking}
+              />
+            }
+          />
 
-          <Summary />
-        </>
-      ) : (
-        <OurServices
-          onBookNowClick={openBooking}
-          onHomeClick={showHomePage}
-          onServicesClick={showServicesPage}
-        />
-      )}
->>>>>>> 8e829a9 (Updating the footer)
+          <Route
+            path="/booking"
+            element={
+              <Booking
+                onConfirm={handleConfirmBooking}
+              />
+            }
+          />
+        </Routes>
+      </main>
+
+      <Footer />
 
       <BookNow
         isOpen={isBookingOpen}

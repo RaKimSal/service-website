@@ -2007,4 +2007,145 @@ img {
   .booking-submit-button {
     font-size: 1.08rem;
   }
+
+/************ Unique Footer Styling ************/
+.ivy-site-footer-2026 {
+  width: 100%;
+  padding: 18px 24px;
+  overflow: hidden;
+  background-color: #e0d0c2;
+}
+
+.ivy-site-footer-inner-2026 {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 30px;
+
+  width: min(100%, 1200px);
+  min-height: 120px;
+  margin: 0 auto;
+}
+
+.ivy-site-footer-logo-area-2026 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 180px;
+  height: 120px;
+
+  overflow: hidden;
+}
+
+.ivy-site-footer-logo-link-2026 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+
+  overflow: hidden;
+}
+
+.ivy-site-footer-logo-image-2026 {
+  display: block !important;
+
+  width: 100px !important;
+  max-width: 100px !important;
+  height: 100px !important;
+  max-height: 100px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+}
+
+.ivy-site-footer-right-2026 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.ivy-site-footer-socials-2026 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.ivy-site-footer-socials-2026 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+}
+
+.ivy-site-footer-social-image-2026 {
+  display: block !important;
+
+  width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  max-height: 25px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+}
+
+.ivy-site-footer-credit-2026 {
+  margin: 0 !important;
+
+  color: #150909;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/************ Tablet and Mobile ************/
+@media (max-width: 700px) {
+  .ivy-site-footer-2026 {
+    padding: 20px 16px;
+  }
+
+  .ivy-site-footer-inner-2026 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: auto;
+  }
+
+  .ivy-site-footer-logo-area-2026 {
+    width: 100%;
+    height: 90px;
+  }
+
+  .ivy-site-footer-logo-link-2026,
+  .ivy-site-footer-logo-image-2026 {
+    width: 80px !important;
+    max-width: 80px !important;
+    height: 80px !important;
+    max-height: 80px !important;
+  }
+
+  .ivy-site-footer-right-2026 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+  }
+
+  .ivy-site-footer-credit-2026 {
+    font-size: 13px;
+    white-space: normal;
+    text-align: center;
+  }
+}
 }
